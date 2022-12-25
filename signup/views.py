@@ -1,12 +1,10 @@
 from django.shortcuts import render
 import mysql.connector as sql
-
 fn=''
 ln=''
 s=''
 em=''
 pwd=''
-
 # Create your views here.
 def signaction(request):
     global fn,ln,s,em,pwd

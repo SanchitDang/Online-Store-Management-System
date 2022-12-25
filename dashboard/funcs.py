@@ -1,24 +1,3 @@
-def create_admin():
-    admin_id = int(input('Enter Admin Code: '))
-    name = input('Enter Admin Name: ')
-    passw = input('Enter Admin Password: ')
-    phone = int(input('Enter Employee Phone Number: '))
-
-    query = "INSERT INTO Admin_Data(Admin_ID, Name, Password, Phone_Number) " \
-            "VALUES({}, '{}', '{}', {})".format(admin_id, name, passw, phone)
-
-
-    mycur.execute(query)
-    mycon.commit()
-    print('Employee Created Successfully!')
-
-
-def read_rec():
-    mycur.execute('select * from data')  # Executes the sql command
-    data = mycur.fetchall()  # Returns a list of tuples
-    print(tabulate(data, headers=['Code', 'Name', 'Price', 'Quantity']))  # Make table with given heading
-
-
 def update_price():
     name = input('Enter name of the item whose amount to be changed: ')
     new_amount = input('Enter the new amount: ')
@@ -39,17 +18,6 @@ def update_quantity():
 
     mycur.execute(query)
     mycon.commit()
-
-
-def delete_rec():
-    delete = input('Enter name of Product you want to delete: ')
-
-    query = "DELETE FROM data WHERE Item_name = '{}' ".format(delete)
-
-
-    mycur.execute(query)
-    mycon.commit()
-    print('Value Deleted')
 
 
 def search_rec():

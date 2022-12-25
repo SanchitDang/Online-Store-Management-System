@@ -9,9 +9,22 @@ quan = ''
 
 # Functions
 def create_rec(mycon, mycur, code, name, price, quantity):
-    query = "INSERT INTO data VALUES({}, '{}', {}, {})".format(icod, nam, pri, quan)    
+    query = "INSERT INTO data VALUES({}, '{}', {}, {})".format(code, name, price, quantity)    
     mycur.execute(query)
     mycon.commit()  
+
+def delete_rec(mycon, mycur, item_code):
+    query = "DELETE FROM data WHERE Item_Code = '{}' ".format(item_code)
+    mycur.execute(query)
+    mycon.commit()
+
+def read_rec(mycur):
+    mycur.execute('select * from data') 
+    data = mycur.fetchall() 
+    headers=['Code', 'Name', 'Price', 'Quantity']
+    print(headers)
+    print(data)
+
 
 
 # Create your views here.
