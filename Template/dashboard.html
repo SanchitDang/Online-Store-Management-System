@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'dashboard.css' %}">
+
+<html>
+    <head>
+        <title>Dash Board</title>
+    </head>
+    <body>
+        <h1>Dash Board</h1>
+        <div class="page">
+            <div class="row">
+              <div class="grid_7">
+                <form class="urpForm urpForm_stacked" action="#" method="post" >
+                    {% csrf_token %}
+                    <fieldset class="urpForm_group">
+                    <legend>Create Record</legend>
+          
+                    <label class="urpLabel" for="item_code">Item Code</label>
+                    <input type="text" id="item_code" class="urpInput" name='item_code' required />
+          
+                    <label class="urpLabel" for="name">Name</label>
+                    <input type="text" id="name" class="urpInput" name='name' required/>
+          
+                    <label class="urpLabel" for="price">Price</label>
+                    <input type="text" id="price" class="urpInput" name='price' required />
+          
+                    <label class="urpLabel" for="quantity">Quantity</label>
+                    <input type="text" id="quantity" class="urpInput" name='quantity' required/>
+                  </fieldset>
+          
+                  <button class="pure-button pure-button-primary" type="submit">Submit</button>
+                </form>
+          
+              </div>
+            </div>
+          </div>
+    </body>
+
+</html>
